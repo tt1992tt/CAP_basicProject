@@ -10,6 +10,7 @@ entity Books {
 
 entity Authors {
   key ID : Integer;
+  @Common.Label: 'Author Name' 
   name   : String;
   books  : Association to many Books on books.author = $self;
 }
