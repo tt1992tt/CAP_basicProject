@@ -8,11 +8,12 @@ annotate model.Books with @(
             Title: { Value: ID },
             Description: { Value: title }
         },
-        SelectionFields: [ ID, title, author.name ],
+        SelectionFields: [ ID, title, author.name, category.cat_name ],
         LineItem: [
             { Value: ID },
             { Value: title },
-            { Value: author.name }, 
+            { Value: author.name, Label: 'Author' },
+            { Value: category.cat_name, Label: 'Category'}, 
             { Value: stock },           
         ],
         Facets: [  /* es la pagina de detalles una vez que clickeas el line item */
@@ -29,6 +30,7 @@ annotate model.Books with @(
                 { Value: ID },
                 { Value: title },
                 { Value: author_ID },
+                { Value: category_ID},
                 { Value: stock },             
             ]
         }

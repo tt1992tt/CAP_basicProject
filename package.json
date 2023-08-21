@@ -2,7 +2,7 @@
   "name": "my-bookshop",
   "version": "1.0.0",
   "description": "A simple CAP project.",
-  "repository": "<Add your repository here>",
+  "repository": "https://github.com/tt1992tt/CAP_basicProject.git",
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
