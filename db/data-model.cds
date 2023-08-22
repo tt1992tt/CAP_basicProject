@@ -2,11 +2,15 @@ namespace my.bookshop;
 using { Country, managed } from '@sap/cds/common';
 
 entity Books {
-  key ID : Integer;
-  title  : localized String;
+  @assert.range: [ 0, 2000 ]  /* validaciones */
+  key ID : Integer; 
+  @assert.notNull: true
+  title  : localized String; 
   author : Association to Authors;
   category : Association to Category;
   stock  : Integer;
+} actions {
+  function sayHi () returns String;
 }
 
 entity Authors {
@@ -27,3 +31,5 @@ entity Category {
   cat_name : String;
   books : Association to many Books on books.category = $self;
 }
+
+/* presionar CTRL + C para terminar el command line engorroso */

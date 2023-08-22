@@ -1,4 +1,4 @@
-ID;title;author_ID;category;stock
+ID;title;author_ID;category_ID;stock
 201;Wuthering Heights;101;902;12
 207;Jane Eyre;107;900;11
 251;The Raven;150;902;333

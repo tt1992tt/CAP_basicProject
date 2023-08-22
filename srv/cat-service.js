@@ -1,11 +1,10 @@
 const cds = require ('@sap/cds')
-class BookshopService extends cds.ApplicationService {
 
-  init() {
+module.exports = srv => {
   const {Books} = cds.entities ('my.bookshop')
 
   // Reduce stock of ordered books
-  this.before ('CREATE', 'Orders', async (req) => {
+  srv.before ('CREATE', 'Orders', async (req) => {
     const order = req.data
     if (!order.amount || order.amount <= 0)  return req.error (400, 'Order at least 1 book')
     const tx = cds.transaction(req)
@@ -18,11 +17,17 @@ class BookshopService extends cds.ApplicationService {
   })
 
   // Add some discount for overstocked books
-  this.after ('READ', 'Books', each => {
+  srv.after ('READ', 'Books', each => {
     if (each.stock > 111)  each.title += ' -- 11% discount!'
   })
 
-  return super.init()
+  srv.on('currentTime', async(req) => {
+    const usr = req.data.usr;
+    const currentTime = Date.now();
+    return `Hi ${usr}, Current Time: ${currentTime}`;
+  })
+
+  srv.on('sayHi', () => {
+    return 'Hi';
+  })
 }
-}
-module.exports = BookshopService

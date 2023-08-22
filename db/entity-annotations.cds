@@ -29,8 +29,8 @@ annotate model.Books with @(
             Data: [
                 { Value: ID },
                 { Value: title },
-                { Value: author_ID },
-                { Value: category_ID},
+                { Value: author.name },
+                { Value: category.cat_name},
                 { Value: stock },             
             ]
         }
