@@ -3,6 +3,6 @@
 #Content-Type: application/json
 #{"ID": 2600, "title": "Testing POST", "stock": 10}
 
-GET http://http://localhost:4004/odata/v4/catalog
+GET http://localhost:4004/odata/v4/catalog/Books/
 
 
