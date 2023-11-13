@@ -7,8 +7,8 @@ service CatalogService {
   entity Authors @readonly  as projection on my.Authors;
   entity Category @readonly as projection on my.Category;
   entity Orders             as projection on my.Orders;
+  function currentTime(usr : String) returns String;
+  /* funciones son para lectura (GET) y acciones para escritura (POST) */
+  action sayHi() returns String;
 };
 
-/* funciones son para lectura (GET) y acciones para escritura (POST) */
-function currentTime(usr : String) returns String;
-action sayHi() returns String;

@@ -10,4 +10,4 @@ GET http://localhost:4004/health
 
 GET http://localhost:4004/random
 
-POST http://localhost:4004/crear
+POST http://localhost:4004/odata/v4/catalog/sayHi

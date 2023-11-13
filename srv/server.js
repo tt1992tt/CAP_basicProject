@@ -13,6 +13,10 @@ cds.on('bootstrap', app => {
         res.status(404).send('Ruta no encontrada');
         });
 
+    app.post('/sayHi', (req, res) => {
+        res.status(200).send('Posting...');
+    });
+
     })
 })
 
